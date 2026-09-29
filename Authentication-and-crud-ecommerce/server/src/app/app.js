@@ -7,7 +7,7 @@ import productRoutes from "../routes/product.routes.js"
 function configureApp(app) {
 
     app.use(cors({
-        origin: "YOUR_FRONTEND_VERCEL_URL",
+        origin: "https://snitch-ecom-pxdb.vercel.app",
         credentials: true
     }))
 
