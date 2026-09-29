@@ -1,20 +1,21 @@
-import express from "express" 
+import express from "express"
 import authRouter from "../routes/auth.routes.js" 
 import cookieParser from "cookie-parser"
 import productRoutes from "../routes/product.routes.js"
 
-const app = express() ;   
+function configureApp(app) {
+	app.use(express.json()) ;
 
-app.use(express.json()) ;
+	app.use(cookieParser())
 
-app.use(cookieParser())
+	app.use("/api/auth" ,  authRouter  )
 
-app.use("/api/auth" ,  authRouter  )
+	app.use("/api/products" , productRoutes)
 
-app.use("/api/products" , productRoutes)
+	return app
+}
 
-
-export default app
+export default configureApp
 
 
 
