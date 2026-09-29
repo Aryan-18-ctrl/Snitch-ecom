@@ -4,12 +4,17 @@ import { AuthContext } from "../context/AuthContext";
 import { Outlet } from "react-router";
 
 
+// export const axiosInstance = axios.create({
+//     baseURL:"http://localhost:5173/api",
+//     withCredentials:true
+// })
+
+
+
 export const axiosInstance = axios.create({
-    baseURL:"http://localhost:5173/api",
-    withCredentials:true
+  baseURL: "https://snitch-ecom-ochre.vercel.app/api",
+  withCredentials: true
 })
-
-
 
 
 export const AxiosInterceptor = () => {
